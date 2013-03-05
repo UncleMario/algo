@@ -115,6 +115,7 @@ INSTALLED_APPS = (
     # 'django.contrib.admindocs',
     'algo.app',
     'algo.perfil',
+    'algo.proveedor'
 )
 
 # A sample logging configuration. The only tangible logging

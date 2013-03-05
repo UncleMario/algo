@@ -1,0 +1,15 @@
+{% for tienda in tiendas %}
+<div>
+<p>Tienda: {{ tienda.nombre }}</p>
+<p>Fecha inauguracion: {{ tienda.fechainauguracion }}</p>
+{% for articulo in tienda.articulos.all %}
+<p>Articulos: {{ articulo.nombre }}</p>
+{% endfor %}
+{% for proveedor in tienda.proveedores.all %}
+<p>Proveedores: {{ proveedor.nombre }}</p>
+{% endfor %}
+{% for empleado in tienda.empleados.all %}
+<p>Empleados: {{ empleado.username }}</p>
+{% endfor %}
+</div>
+{% endfor %}

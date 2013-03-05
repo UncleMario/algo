@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 
+from algo.proveedor.models import Articulo, Proveedor
+
 estadosciviles=(
 	('S','Soltero'),
 	('C','Casado'),
@@ -29,7 +31,8 @@ class Transaccion(models.Model):
 	dueno=models.ForeignKey(User)
 	fecha=models.DateField(auto_now_add=True,)
 	cantidad=models.IntegerField()
-	articulo=models.CharField(max_length=15,)
+	articulo=models.ForeignKey(Articulo)
+	proveedor=models.ForeignKey(Proveedor)
 
 	def __unicode__(self):
 		return u'%s' % (self.dueno)
